@@ -5,9 +5,94 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Building an Interactive Map!</title>
-    <script src="app.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+    integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+    crossorigin=""/>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+
+    <script src="app.js" defer></script>
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+    integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+    crossorigin=""></script>
+   <style>
+    #map { 
+        height: 400px;
+        background-color: #ccc;
+    }
+    #map::before{
+        content: 'LOADING';
+        font-size: 3em;
+        text-align: center;
+        width: 100%;
+        position: absolute;
+        margin-top: 3em;
+    }
+    .leaflet-popup-content-wrapper {
+        width: 100%;
+    }
+    select {
+        border-radius: 5px;
+        border: 1px solid #ccc;
+        padding: .5em 2em .5em 1em;
+    }
+    button {
+  position: relative;
+  top: 0;
+  display: inline-block;
+  margin: 0 1em;
+  padding: .75em 4em;
+  border: none;
+  border-radius: 10px;
+  text-align: center;
+  font-size: .75em;
+  font-weight: 700;
+  text-transform: uppercase;
+  transition: all 0.2s ease !important;
+  background-color:cadetblue;
+  color: white;
+    }
+   </style>
 </head>
 <body>
-    
+    <div class="row">
+        <div id="map"></div>
+    </div>
+
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <form class="text-center">
+                <select id="locations">
+                    <option value="restaurant">Restaurants</option>
+                    <option value="coffee">Coffee Shops</option>
+                    <option value="hotel">Hotels</option>
+                    <option value="market">Markets</option>
+                </select>
+                    <button class="text-center" id="submit">Submit</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="container mt-5">
+        <div class="card">
+            <div class="card-header">
+                Project - Create an Interactive Map
+            </div>
+            <div class="card-body">
+                <p class="card-text">This map utilizes the Leaflet library and Foursquare API to map the users geolocation coordinates onto a map. The user is then able to select a business type and have businesses add to the map.</p>
+
+                <p class="card-text">This project is meant to be completed independently. The code here may be used as a reference, but it is expected that every project will differ.</p>
+                    
+                <h2 class="card-title">Minimum Steps to Produce</h2>
+                <p class="card-text">
+                    <ul>
+                    <li>Get the user's current location.</li>
+                    <li>Map that location on a Leaflet map.</li>
+                    <li>Allow the user to select a business type from a select list and map the 5 nearest locations on the same map using the Foursquare API.</li>
+                    </ul>
+                </p>
+                </div>
+        </div>
+    </div>
 </body>
 </html>
