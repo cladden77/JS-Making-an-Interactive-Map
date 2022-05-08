@@ -86,9 +86,11 @@
                 <h2 class="card-title">Minimum Steps to Produce</h2>
                 <p class="card-text">
                     <ul>
-                    <li>Get the user's current location.</li>
-                    <li>Map that location on a Leaflet map.</li>
-                    <li>Allow the user to select a business type from a select list and map the 5 nearest locations on the same map using the Foursquare API.</li>
+                    <li>When opening the page, the browser must pull the user's location data.</li>
+                    <li>When viewing the page, a map must be rendered using the Leaflet API.</li>
+                    <li>When viewing the map, the user's coordinates must be rendered with a marker titled "You Are Here".</li>
+                    <li>When viewing the page, a dropdown must be present above the map that lists the business types retrieved from the Foursquare API.</li>
+                    <li>When a business type is selected, 5 businesses of that type that are closest to the user must be rendered with markers on the map.</li>
                     </ul>
                 </p>
                 </div>

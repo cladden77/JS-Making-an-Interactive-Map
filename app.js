@@ -25,7 +25,7 @@ const myMap = {
 		const marker = L.marker(this.coordinates)
 		marker
 		.addTo(this.map)
-		.bindPopup('<p1><b>Here you are</b><br></p1>')
+		.bindPopup('<p1><b>You are Here</b><br></p1>')
 		.openPopup()
 	},
 
@@ -92,7 +92,7 @@ window.onload = async () => {
 // submit button
 document.getElementById('submit').addEventListener('click', async (event) => {
 	event.preventDefault()
-	let locations = document.querySelector('locations').value
+	let locations = document.getElementById('locations').value
 	let data = await getFoursquare(locations)
 	myMap.places = processPlaces(data)
 	myMap.addMarkers()
